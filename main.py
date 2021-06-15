@@ -4,11 +4,11 @@ import requests
 import keep_alive
 import json
 client = discord.Client()
-api_key = 'AIzaSyBmDzNfnxuUZogFEtWQQ2CkAodYOYm3nf0'
-channel_id = 'UCCWp4CCmI2JmIaoAuv0ocEA'
+api_key = 'youtube v3 api key'
+channel_id = 'click on a channel and look at the url to figure out its id'
 base_video_url = 'https://www.youtube.com/watch?v='
 base_search_url = 'https://www.googleapis.com/youtube/v3/search?'
-first_url = base_search_url + 'key={}&channelId={}&part=snippet,id&order=date&maxResults=1'.format(api_key, channel_id)
+first_url = base_search_url + 'key={api_key}&channelId={channel_id}&part=snippet,id&order=date&maxResults=1'
 url = first_url
 @client.event
 async def on_message(message):
@@ -43,7 +43,7 @@ async def on_message(message):
                         else:
 
                                         if message.content == "/member_count":
-                                                id = client.get_guild(823429276459335680)
+                                                id = client.get_guild('find your discord server or channel id')
                                                 await message.channel.send(f"""{id.member_count}""")
                                         else:
                                                 if message.content == "/latest":
@@ -58,7 +58,7 @@ async def on_message(message):
 
 keep_alive.keep_alive()
 
-client.run('ODI3ODMwMjY2NTI5NzEwMTUx.YGgvAw.VvIN1L64pzskhXX9v9k-86DVGg8')
+client.run('get discord token to run')
 
 
 
