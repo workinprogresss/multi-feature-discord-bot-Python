@@ -13,7 +13,7 @@ url = first_url
 @client.event
 async def on_message(message):
                 if message.content == "/word":
-                        my_file = open("latest.txt", "r")
+                        my_file = open("word_list.txt", "r")
                         words = my_file.readlines()
 
                         random_thing = (random.randint(0, 160))
@@ -34,7 +34,7 @@ async def on_message(message):
 
                 else:
                         if message.content == "/fact":
-                                with open('facz.txt') as f:
+                                with open('facts.txt') as f:
                                         g = f.readlines()
                                 await message.channel.send(random.choice(g))
 
