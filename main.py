@@ -6,9 +6,9 @@ import json
 client = discord.Client()
 api_key = 'youtube v3 api key'
 channel_id = 'click on a channel and look at the url to figure out its id'
-base_video_url = 'https://www.youtube.com/watch?v='
-base_search_url = 'https://www.googleapis.com/youtube/v3/search?'
-first_url = base_search_url + 'key={api_key}&channelId={channel_id}&part=snippet,id&order=date&maxResults=1'
+base_layer_vid_url = 'https://www.youtube.com/watch?v='
+base_layer_api_search_url = 'https://www.googleapis.com/youtube/v3/search?'
+first_url = base_layer_api_search_url + 'key={api_key}&channelId={channel_id}&part=snippet,id&order=date&maxResults=1'
 url = first_url
 @client.event
 async def on_message(message):
@@ -54,7 +54,7 @@ async def on_message(message):
                                                         for i in resp['items']:
                                                                 if i['id']['kind'] == "youtube#video":
                                                                         await message.channel.send(
-                                                                                (base_video_url + i['id']['videoId']))
+                                                                                (base_layer_vid_url + i['id']['videoId']))
 
 keep_alive.keep_alive()
 
